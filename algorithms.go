@@ -1,4 +1,4 @@
-package anagramma
+package main
 
 import (
 	"sort"
