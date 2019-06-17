@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"strings"
 	"time"
 )
 
@@ -86,7 +85,7 @@ func (hm *HashMap) GetHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	matchSlice := hm.Load(strings.TrimSpace(word))
+	matchSlice := hm.Load(word)
 	data, _ := json.Marshal(matchSlice)
 	w.WriteHeader(http.StatusOK)
 	w.Write(data)
